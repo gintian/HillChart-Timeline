@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function RecipeReviewCard() {
+export default function HillChartCard() {
   const classes = useStyles();
   let pts = [
     { id: 1, description: 'Something cool', x: 100, radius: 10, color: Konva.Util.getRandomColor() },

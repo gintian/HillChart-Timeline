@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 import { Stage, Layer, Rect, Shape, Group } from 'react-konva';
 import { pow, e } from "mathjs"
 import Point from './Point';
@@ -53,7 +53,7 @@ const HillChartComponent = ({ width, height, points, update }) => {
 
 	const Points = () => {
 		return (
-			<>
+			<Fragment>
 			{points
 				.sort((a, b) => b.radius - a.radius)
 				.map(point => {
@@ -70,7 +70,7 @@ const HillChartComponent = ({ width, height, points, update }) => {
 					/>;
 				})
 			}
-			</>
+			</Fragment>
 		);
 	};
 

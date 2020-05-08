@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import HillChart from './HillChart/HillChart';
+import HillChartCard from './HillChart/HillChartCard';
 import Button from '@material-ui/core/Button';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 
@@ -22,7 +22,7 @@ class App extends Component {
         NEW CHART
         </Button>
 
-        <HillChart></HillChart>
+        <HillChartCard></HillChartCard>
       </div>
     );
   }
