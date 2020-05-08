@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import HillChart from './HillChart/HillChart';
-import Button from '@material-ui/core/Button';
-import AddBoxIcon from '@material-ui/icons/AddBox';
+import AddChartButton from './AddChartButton/AddChartButton';
 
 class App extends Component {
   state = {
-    
+    hillChartList: [
+
+    ],
+  }
+
+  addHillChartHandler = () => {
+    this.setState({})
   }
 
   render() {
@@ -14,14 +19,8 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
 
-        <Button
-        variant="contained"
-        color="primary"
-        startIcon={<AddBoxIcon />}
-        >
-        NEW CHART
-        </Button>
-
+        <AddChartButton></AddChartButton>
+        
         <HillChart></HillChart>
       </div>
     );
