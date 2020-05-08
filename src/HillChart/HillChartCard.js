@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import HillChartComponent from "./HillChartComponent";
+import Konva from 'konva';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,6 +19,18 @@ const useStyles = makeStyles(theme => ({
 
 export default function RecipeReviewCard() {
   const classes = useStyles();
+  let pts = [
+    { id: 1, description: 'Something cool', x: 100, radius: 10, color: Konva.Util.getRandomColor() },
+    { id: 2, description: 'Something cancer', x: 200, radius: 15, color: Konva.Util.getRandomColor() },
+    { id: 3, description: 'Something shit', x: 300, radius: 15, color: Konva.Util.getRandomColor() },
+    { id: 4, description: 'Something awesome', x: 500, radius: 25, color: Konva.Util.getRandomColor() }
+  ];
+
+  const [points, setPoint] = useState(pts);
+
+  const updatePoints = (points) => {
+    setPoint(points);
+  };
 
   return (
     <Card className={classes.root}>
@@ -25,12 +38,14 @@ export default function RecipeReviewCard() {
         title="Quicker dabber"
         subheader={new Date().toLocaleDateString()}
       />
-      <CardMedia
-        className={classes.media}
-        image="https://basecamp.com/assets/3/hill-charts/hill-chart-hero-a846364279ec0757ba0ea2a5e6566560feea9551b9063ab19b5ea90d8f7d3495.gif"
-        title="Paella dish"
-      />
       <CardContent>
+        <HillChartComponent 
+          height={400} 
+          width={800} 
+          points={points} 
+          update={updatePoints}/>
+        />
+
         <Typography variant="body2" color="textSecondary" component="p">
           Today we made moniez and again tomorrow
         </Typography>
