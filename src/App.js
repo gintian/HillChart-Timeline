@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import HillChart from './HillChart/HillChart';
+import HillChartCard from './HillChart/HillChartCard';
 import AddChartButton from './AddChartButton/AddChartButton';
 
 class App extends Component {
@@ -18,10 +18,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-
         <AddChartButton></AddChartButton>
-        
-        <HillChart></HillChart>
+        <HillChartCard></HillChartCard>
       </div>
     );
   }
